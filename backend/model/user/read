@@ -1,0 +1,10 @@
+<?php
+
+    include('../    ../connection/conn.php');
+
+    $sql = "SELECT * FROM user";
+    $stmt = $conn->prepare($sql);
+    $dados = $stmt->fetchAll(PDO::FECTH_ASSOC);
+
+    $conn = null;
+    echo json_encode($dados);
